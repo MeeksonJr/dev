@@ -7,8 +7,17 @@ import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 import { updateSubscriptionPlan } from "@/lib/supabase/user-profile"
+import { Suspense } from "react"
 
 export default function SuccessPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SuccessContent />
+    </Suspense>
+  )
+}
+
+function SuccessContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const plan = searchParams.get("plan")

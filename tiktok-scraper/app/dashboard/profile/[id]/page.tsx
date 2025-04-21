@@ -8,6 +8,9 @@ import { TwitterIcon as TikTok, Heart, Video, AlertCircle, Users } from "lucide-
 import { formatDistanceToNow } from "date-fns"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 
+// Add this export to make the page dynamic
+export const dynamic = "force-dynamic"
+
 // Create a Supabase client for server-side use with cookies
 const createServerClient = () => {
   const cookieStore = cookies()

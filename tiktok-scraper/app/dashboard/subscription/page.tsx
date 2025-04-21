@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button"
 import { Check, CreditCard } from "lucide-react"
 import { getUserProfile } from "@/lib/supabase/user-profile"
 
+// Add this export to make the page dynamic
+export const dynamic = "force-dynamic"
+
 // Create a Supabase client for server-side use with cookies
 const createServerClient = () => {
   const cookieStore = cookies()

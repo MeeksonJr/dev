@@ -8,6 +8,9 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { getUserProfile, createUserProfile } from "@/lib/supabase/user-profile"
 import { getUserScrapedData } from "@/lib/supabase/social-data"
 
+// Add this export to make the page dynamic
+export const dynamic = "force-dynamic"
+
 // Create a Supabase client for server-side use with cookies
 const createServerClient = () => {
   const cookieStore = cookies()
