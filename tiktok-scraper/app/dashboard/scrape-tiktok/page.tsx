@@ -6,6 +6,20 @@ import { cookies } from "next/headers"
 import ScrapedDataList from "./scraped-data-list"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { AlertCircle } from "lucide-react"
+import { GetServerSidePropsContext } from "next";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import { cookies } from "next/headers";
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const cookies = context.req.cookies;
+
+  // Your logic to handle scraping, cookies, or any dynamic data
+  return {
+    props: {
+      cookies, // pass necessary data to the page
+    },
+  };
+}
 
 // Create a Supabase client for server-side use with cookies
 const createServerClient = () => {
